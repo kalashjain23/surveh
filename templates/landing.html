@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey App</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
+        }
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to The Surveh!</h1>
+        <p>Surveh is a powerful tool that allows organizations to create and manage surveys with ease. With our advanced features, you can not only collect valuable feedback from your customers or stakeholders, but also get sentiment analysis for your survey questions.</p>
+        <p>Our intuitive interface and customization options make it easy to create surveys that are tailored to your specific needs. Once your survey is live, our sentiment analysis will help you understand the emotional responses to your questions, allowing you to make data-driven decisions to improve your products, services, or overall business strategy.</p>
+        <p>Get started today by signing up or logging in below:</p>
+        <a href="{{ url_for('signup') }}" class="btn">Sign Up</a>
+        <a href="{{ url_for('login') }}" class="btn">Log In</a>
+    </div>
+</body>
+</html>

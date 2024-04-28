@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Responses</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
+            padding: 2rem;
+        }
+        .title {
+            margin-bottom: 2rem;
+        }
+        .question {
+            margin-bottom: 2rem;
+        }
+        .question-text {
+            font-weight: bold;
+        }
+        .response {
+            margin-bottom: 0.5rem;
+        }
+        .sentiment-category {
+            font-style: italic;
+            color: #4a4a4a;
+        }
+        hr {
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">{{ survey.title }}</h1>
+        <div class="content">
+            {% for question in survey.questions %}
+            <div class="question">
+                <p class="question-text">{{ question.text }}</p>
+                <ul>
+                    {% for response in question.responses %}
+                    <li class="response">{{ response.text }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="sentiment-category">Summary of responses: {{ question.get_summary() }}</p>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
